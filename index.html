@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectPro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <h2>Encontre o profissional ideal para você</h2>
+            <p>Rápido, fácil e personalizado.</p>
+
+            <div class="busca-box">
+
+                <div class="input-group">
+                    <span>📍</span>
+                    <input type="text" id="cep" placeholder="Cidade, endereço ou CEP">
+                </div>
+
+                <div class="input-group">
+                    <span>🔍</span>
+                    <input type="text" id="busca" placeholder="Qual serviço você procura?">
+                </div>
+
+                <button class="btn-busca" onclick="buscar()">Buscar</button>
+
+            </div>
+
+            <!-- CTA RÁPIDO -->
+            <div style="margin-top: 20px;">
+                <a href="servicos.html" class="btn">Ver serviços</a>
+                <a href="profissionais.html" class="btn" style="margin-left:10px;">Ver profissionais</a>
+            </div>
+
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section class="como-funciona">
+            <h2>Como funciona</h2>
+
+            <div class="passos">
+
+                <div class="passo">
+                    <h3>1. Descreva o que você precisa</h3>
+                    <p>
+                        Informe o serviço, objetivo e preferências.<br><br>
+                        <strong>Exemplo:</strong><br>
+                        “Quero emagrecer com treinos em casa”
+                    </p>
+                </div>
+
+                <div class="passo">
+                    <h3>2. Receba profissionais ideais</h3>
+                    <p>
+                        O sistema conecta você com especialistas compatíveis,
+                        com avaliações e experiências.
+                    </p>
+                </div>
+
+                <div class="passo">
+                    <h3>3. Escolha e contrate</h3>
+                    <p>
+                        Compare, converse e feche com segurança.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RESULTADOS -->
+        <section id="resultados" class="cards"></section>
+
+        <!-- APP -->
+        <section class="apps">
+            <h2>📱 Em breve disponível</h2>
+            <p>Baixe nosso app na App Store e Google Play</p>
+
+            <div class="botoes-app">
+                <img src="img/appstore.png" alt="App Store">
+                <img src="img/googleplay.png" alt="Google Play">
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta">
+            <h2>Comece agora na ConnectPro</h2>
+            <p>Crie sua conta gratuitamente</p>
+
+            <div class="cta-botoes">
+                <a href="login.html" class="btn cliente">
+                    👤 Sou cliente
+                </a>
+
+                <a href="login.html" class="btn profissional">
+                    💼 Sou profissional
+                </a>
+            </div>
+
+            <p style="margin-top:15px; font-size:14px;">
+                Já tem conta? <a href="login.html" style="color:white;"><strong>Entrar</strong></a>
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

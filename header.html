@@ -1,0 +1,36 @@
+<header class="header">
+
+    <h1>ConnectPro</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="profissionais.html">Profissionais</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <!-- LOGIN / USUÁRIO -->
+    <div class="login-dropdown">
+
+        <button class="login-btn" onclick="toggleMenu()">
+            <span id="nomeHeader">Entrar</span>
+        </button>
+
+        <div id="menuLogin" class="menu-login">
+
+            <!-- NÃO LOGADO -->
+            <div id="menuDeslogado">
+                <a href="login.html">Login</a>
+                <a href="login.html">Criar conta</a>
+            </div>
+
+            <!-- LOGADO -->
+            <div id="menuLogado" style="display:none;">
+                <a href="#">Meu perfil</a>
+                <a href="#" onclick="logout()">Sair</a>
+            </div>
+
+        </div>
+    </div>
+
+</header>

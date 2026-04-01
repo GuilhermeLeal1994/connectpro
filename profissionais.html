@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profissionais</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" style="padding: 60px 20px;">
+            <h2>Profissionais disponíveis</h2>
+            <p>Escolha um profissional e favorite para contratar depois</p>
+        </section>
+
+        <!-- LISTA DINÂMICA -->
+        <section id="resultados" class="cards"></section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        /* Carrega todos os profissionais automaticamente */
+        document.addEventListener("DOMContentLoaded", () => {
+            renderResultados(profissionais);
+        });
+    </script>
+
+</body>
+</html>

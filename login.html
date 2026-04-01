@@ -1,0 +1,28 @@
+<section class="login-central">
+
+    <h2 id="titulo">Faça seu Login</h2>
+
+    <!-- TIPOS -->
+    <div class="tipos">
+        <button onclick="selecionarTipo('cliente')">👤 Cliente</button>
+        <button onclick="selecionarTipo('profissional')">💼 Profissional</button>
+        <button onclick="selecionarTipo('admin')">🔒 Admin</button>
+    </div>
+
+    <!-- FORM -->
+    <form onsubmit="return enviarForm()">
+
+        <input type="text" id="nome" placeholder="Nome" style="display:none;">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+
+        <button type="submit" class="btn">Entrar</button>
+    </form>
+
+    <!-- TROCA -->
+    <p id="toggleText">
+        Não tem conta?
+        <a href="#" onclick="alternarModo()">Criar conta</a>
+    </p>
+
+</section>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <main>
+
+        <!-- TÍTULO -->
+        <section class="hero" style="padding: 60px 20px;">
+            <h2>Encontre serviços</h2>
+            <p>Escolha uma categoria ou busque profissionais</p>
+        </section>
+
+        <!-- FILTROS -->
+        <section class="filtros-servicos">
+
+            <h3>Filtrar por categoria</h3>
+
+            <div class="filtros">
+                <button onclick="filtrar('Personal')">🏋️ Personal Trainer</button>
+                <button onclick="filtrar('Medicina')">📈 Medicina</button>
+                <button onclick="filtrar('Nutricionista')">🥗 Nutricionista</button>
+                <button onclick="filtrar('Fisioterapia')">🥗 Fisioterapia</button>
+                <button onclick="filtrar('Anestesia')">🥗 Anestesia</button>
+                <button onclick="filtrar('Psicologo')">🥗 Psicologo</button>
+            </div>
+
+        </section>
+
+        <!-- RESULTADOS -->
+        <section id="resultados" class="cards"></section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
