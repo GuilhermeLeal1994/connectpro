@@ -1,28 +1,25 @@
-<section class="login-central">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - ConnectPro</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
 
-    <h2 id="titulo">Faça seu Login</h2>
+  <div class="container">
+    <div class="login-box">
+      <h2>Entrar</h2>
+      <p>Acesse sua conta</p>
 
-    <!-- TIPOS -->
-    <div class="tipos">
-        <button onclick="selecionarTipo('cliente')">👤 Cliente</button>
-        <button onclick="selecionarTipo('profissional')">💼 Profissional</button>
-        <button onclick="selecionarTipo('admin')">🔒 Admin</button>
+      <input type="email" placeholder="Seu email">
+      <input type="password" placeholder="Sua senha">
+
+      <button>Entrar</button>
+
+      <span>Não tem conta? Cadastre-se</span>
     </div>
+  </div>
 
-    <!-- FORM -->
-    <form onsubmit="return enviarForm()">
-
-        <input type="text" id="nome" placeholder="Nome" style="display:none;">
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="senha" placeholder="Senha" required>
-
-        <button type="submit" class="btn">Entrar</button>
-    </form>
-
-    <!-- TROCA -->
-    <p id="toggleText">
-        Não tem conta?
-        <a href="#" onclick="alternarModo()">Criar conta</a>
-    </p>
-
-</section>
+</body>
+</html>
