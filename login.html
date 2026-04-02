@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - ConnectPro</title>
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-  <div class="container">
-    <div class="login-box">
-      <h2>Entrar</h2>
-      <p>Acesse sua conta</p>
+<body class="login-page">
 
-      <input type="email" placeholder="Seu email">
-      <input type="password" placeholder="Sua senha">
+  <div class="login-box">
+    <h2>Entrar</h2>
+    <p>Acesse sua conta</p>
 
-      <button>Entrar</button>
+    <form>
+      <input type="email" placeholder="Seu email" required>
+      <input type="password" placeholder="Sua senha" required>
+      <button type="submit" class="btn">Entrar</button>
+    </form>
 
-      <span>Não tem conta? Cadastre-se</span>
-    </div>
+    <span>Não tem conta? <a href="#">Cadastre-se</a></span>
   </div>
 
 </body>
+
 </html>
