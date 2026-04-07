@@ -27,6 +27,15 @@ GitHub: https://github.com/JoaoVFigueiredo
 RA: 25340355-3
 
 
+👨🏻‍💻 Rebeca Ferreira de Almeida
+GitHub:
+RA: 26004961-2
+
+
+👨🏻‍💻 Eduardo Reis Marcondes
+GitHub:
+RA: 25142866-2
+
 
 📌 Projeto desenvolvido para fins acadêmicos.
 
