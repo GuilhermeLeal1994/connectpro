@@ -27,9 +27,9 @@ GitHub: https://github.com/JoaoVFigueiredo
 RA: 25340355-3
 
 
-👨🏻‍💻 Rebeca Ferreira de Almeida
+👨🏻‍💻 Henrique Montagnini
 GitHub:
-RA: 26004961-2
+RA:
 
 
 👨🏻‍💻 Eduardo Reis Marcondes
