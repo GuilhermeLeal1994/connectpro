@@ -26,10 +26,6 @@ const profissionais = [
     { nome: "Maryele", tipo: "Psicologo" },
     { nome: "Ana Luiza", tipo: "Fisioterapia" },
     { nome: "Rebeca", tipo: "Nutricionista" },
-
-
-
-
 ];
 
 /* FILTRO (MATCHING) */
@@ -96,16 +92,18 @@ function favoritar(nome) {
 let tipo = "cliente";
 let modo = "login";
 
-function selecionarTipo(t) {
+function selecionarTipo(t, event) {
     tipo = t;
 
-    // feedback visual (opcional)
     document.querySelectorAll(".tipos button").forEach(btn => {
         btn.style.background = "#ddd";
+        btn.style.color = "black";
     });
 
-    event.target.style.background = "#1e90ff";
-    event.target.style.color = "white";
+    if (event && event.target) {
+        event.target.style.background = "#1e90ff";
+        event.target.style.color = "white";
+    }
 }
 
 function alternarModo() {
@@ -128,59 +126,75 @@ function alternarModo() {
     }
 }
 
-function enviarForm() {
-    const nome = document.getElementById("nome")?.value || "";
-    const email = document.getElementById("email")?.value;
-    const senha = document.getElementById("senha")?.value;
-
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+async function enviarForm() {
+    const nome = document.getElementById("nome")?.value.trim() || "";
+    const email = document.getElementById("email")?.value.trim();
+    const senha = document.getElementById("senha")?.value.trim();
 
     if (!email || !senha) {
         alert("Preencha os campos!");
         return false;
     }
 
-    /* CADASTRO */
-    if (modo === "cadastro") {
+    try {
+        if (modo === "cadastro") {
+            if (!nome) {
+                alert("Preencha o nome!");
+                return false;
+            }
 
-        if (nome === "") {
-            alert("Digite seu nome!");
+            const response = await fetch("http://localhost:3000/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nome,
+                    email,
+                    senha,
+                    tipo
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                alert(data.message || "Erro ao cadastrar.");
+                return false;
+            }
+
+            alert("Cadastro realizado com sucesso!");
+            window.location.href = "login.html";
+            return false;
+        } else {
+            const response = await fetch("http://localhost:3000/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email,
+                    senha,
+                    tipo
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                alert(data.message || "Erro ao fazer login.");
+                return false;
+            }
+
+            localStorage.setItem("usuarioLogado", JSON.stringify(data.usuario));
+
+            alert(`Bem-vindo ${data.usuario.nome}!`);
+            window.location.href = "index.html";
             return false;
         }
-
-        const existe = usuarios.find(u => u.email === email);
-
-        if (existe) {
-            alert("Usuário já existe!");
-            return false;
-        }
-
-        usuarios.push({ nome, email, senha, tipo });
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-        alert("Cadastro realizado com sucesso!");
-        return false;
-
-    /* LOGIN */
-    } else {
-
-        const usuario = usuarios.find(u =>
-            u.email === email &&
-            u.senha === senha &&
-            u.tipo === tipo
-        );
-
-        if (!usuario) {
-            alert("Login inválido!");
-            return false;
-        }
-
-        localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-
-        alert(`Bem-vindo ${usuario.nome}!`);
-
-        window.location.href = "index.html"; // 🔥 REDIRECIONA
-
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao conectar com servidor");
         return false;
     }
 }
@@ -198,7 +212,7 @@ function validarForm() {
     const email = document.getElementById("email")?.value;
     const msg = document.getElementById("mensagem")?.value;
 
-    if (!nome || !email || msg.length < 10) {
+    if (!nome || !email || !msg || msg.length < 10) {
         alert("Preencha corretamente!");
         return false;
     }
@@ -211,6 +225,12 @@ function validarForm() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    const botoesTipo = document.querySelectorAll(".tipos button");
+    if (botoesTipo.length > 0) {
+        botoesTipo[0].style.background = "#1e90ff";
+        botoesTipo[0].style.color = "white";
+    }
+
     /* HEADER */
     fetch("header.html")
         .then(res => res.text())
@@ -219,7 +239,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (header) {
                 header.innerHTML = data;
 
-                // Atualiza usuário logado
                 const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
 
                 if (usuario) {
@@ -232,7 +251,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (menuDeslogado) menuDeslogado.style.display = "none";
                 }
             }
-        });
+        })
+        .catch(error => console.error("Erro ao carregar header:", error));
 
     /* FOOTER */
     fetch("footer.html")
@@ -240,6 +260,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             const footer = document.getElementById("footer");
             if (footer) footer.innerHTML = data;
-        });
-
+        })
+        .catch(error => console.error("Erro ao carregar footer:", error));
 });

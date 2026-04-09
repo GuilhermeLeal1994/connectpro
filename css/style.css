@@ -345,3 +345,84 @@ body {
 main {
     margin-top: 110px;
 }
+
+/* ===== LOGIN / CADASTRO ===== */
+
+.login-page {
+    background: linear-gradient(135deg, #1e90ff, #0a3d62);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 5px;
+}
+
+.login-box p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #1e90ff;
+}
+
+/* BOTÃO */
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #0a74da;
+}
+
+/* LINK CADASTRO */
+
+.login-box span {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-box a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
